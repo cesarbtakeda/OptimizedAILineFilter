@@ -7,7 +7,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.cluster import KMeans
 
 class FiltroIA:
-    def __init__(self, root): 
+    def _init_(self, root):  # <-- Correção aqui
         self.root = root
         self.root.title("Filtro de Linhas com IA")
         self.root.geometry("600x500")
@@ -73,7 +73,7 @@ class FiltroIA:
                 file.write(self.text_area.get("1.0", tk.END))
             messagebox.showinfo("Sucesso", "Arquivo salvo com sucesso!")
 
-if __name__ == "__main__": 
+if _name_ == "_main_":  # <-- Correção aqui
     root = tk.Tk()
     app = FiltroIA(root)
-    root.mainloop()
+    root.mainloop()  # <-- Removido caractere invisível aqui
